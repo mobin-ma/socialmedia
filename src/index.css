@@ -16,7 +16,7 @@
   --color-success: hsl(120, 95%, 65%);
   --color-danger: hsl(0, 95%, 65%);
   --color-dark: hsl(252, 30%, var(--dark-color-lightness));
-  --color-black: hsl(252, 30%, 10%);
+  --color-black: hsl(252, 30%, 9%);
 
   --border-radius: 2rem;
   --card-border-radius: 1rem;
@@ -45,6 +45,7 @@ body {
   background: var(--color-light);
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
+  transition: .3s ease;
 }
 
 /* =================================== GENERAL STYLE =================================== */
@@ -116,6 +117,7 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10;
+  transition: .3s ease;
 }
 
 nav .container {
@@ -132,6 +134,7 @@ nav .container {
   -ms-border-radius: var(--border-radius);
   -o-border-radius: var(--border-radius);
   padding: var(--search-padding);
+  transition: .3s ease;
 }
 
 .search-bar input[type="search"] {
@@ -186,6 +189,7 @@ main .container .left .profile {
   align-items: center;
   column-gap: 1rem;
   width: 100%;
+  transition: .3s ease;
 }
 
 /* =================================== SIDBAR =================================== */
@@ -198,6 +202,7 @@ main .container .left .profile {
   -moz-border-radius: var(--card-border-radius);
   -ms-border-radius: var(--card-border-radius);
   -o-border-radius: var(--card-border-radius);
+  transition: .3s ease;
 }
 
 .left .sidebar .menu-item {
@@ -214,7 +219,7 @@ main .container .left .profile {
 }
 
 .left .sidebar .menu-item:hover {
-  background: var(--color-light);
+  background: #6b4ce654;
 }
 
 .left .sidebar i {
@@ -222,6 +227,10 @@ main .container .left .profile {
   color: var(--color-gray);
   margin-left: 2rem;
   position: relative;
+}
+
+.left .sidebar a {
+  color: var(--color-black);
 }
 
 .left .sidebar i .notifications-count {
@@ -247,6 +256,7 @@ main .container .left .profile {
 
 .left .sidebar .active {
   background: var(--color-light);
+  transition: .3s ease;
 }
 
 .left .sidebar .active i,
@@ -331,6 +341,9 @@ main .container .left .profile {
   justify-content: space-between;
   height: 12rem;
   gap: 0.5rem;
+  border-bottom: 3px dashed var(--color-dark);
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .middle .storis .story {
@@ -350,6 +363,7 @@ main .container .left .profile {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: .3s ease;
 }
 
 .middle .storis .story::before {
@@ -418,6 +432,7 @@ main .container .left .profile {
   -moz-border-radius: var(--border-radius);
   -ms-border-radius: var(--border-radius);
   -o-border-radius: var(--border-radius);
+  transition: .3s ease;
 }
 
 .middle .create-post input[type="text"] {
@@ -442,6 +457,7 @@ main .container .left .profile {
   margin: 1rem 0;
   font-size: 0.85rem;
   line-height: 1.5;
+  transition: .3s ease;
 }
 
 .middle .feeds .feed .head {
@@ -479,6 +495,10 @@ main .container .left .profile {
 .interaction-buttons span,
 .bookmark span {
   cursor: pointer;
+}
+
+i.bxs-heart {
+  color: var(--color-danger);
 }
 
 .middle .liked-by span {
@@ -520,6 +540,7 @@ main .container .right {
   -ms-border-radius: var(--card-border-radius);
   -o-border-radius: var(--card-border-radius);
   padding: var(--card-padding);
+  transition: .3s ease;
 }
 
 .right .messages .requesr-massege {
@@ -572,6 +593,7 @@ main .container .right {
 
 .right .messages .categgory .active {
   border-color: var(--color-dark);
+  transition: .3s ease;
 }
 
 .right .messages .message {
@@ -624,6 +646,7 @@ main .container .right {
   -ms-border-radius: var(--card-border-radius);
   -o-border-radius: var(--card-border-radius);
   margin-bottom: 0.7rem;
+  transition: .3s ease;
 }
 
 .right .request .info {
@@ -637,185 +660,121 @@ main .container .right {
   gap: 1rem;
 }
 
+/* =================================== EXPLORE =================================== */
+
+.explores {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0.5rem;
+}
+
+.explore {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.explore img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 2rem;
+}
+
+.postHover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  height: 100%;
+  border-radius: 2rem;
+  background-color: #3f3f3f50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  display: none;
+  transition: .5s ease;
+}
+
+.postHover i {
+  font-size: 2rem;
+  color: var(--color-light);
+}
+
+.explore:hover .postHover {
+  display: inline-flex !important;
+}
+
 /* =================================== CAHGE THEME SECTION =================================== */
 
-.customize-theme {
-  background: rgba(255, 255, 255, 0.5);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  text-align: center;
-  display: grid;
-  place-items: center;
-  font-size: 0.9rem;
-  display: none;
+body.dark-mode,
+body.dark-mode .search-bar {
+  color: var(--color-white);
+  background: var(--color-black);
+  transition: .3s ease;
 }
 
-.customize-theme .card {
-  background: var(--color-white);
-  padding: 3rem;
-  border-radius: var(--card-border-radius);
-  -webkit-border-radius: var(--card-border-radius);
-  -moz-border-radius: var(--card-border-radius);
-  -ms-border-radius: var(--card-border-radius);
-  -o-border-radius: var(--card-border-radius);
-  width: 50%;
-  box-shadow: 0 0 1rem var(--color-primary);
+body.dark-mode nav,
+body.dark-mode .feed,
+body.dark-mode .profile,
+body.dark-mode .sidebar,
+body.dark-mode .create-post,
+body.dark-mode .messages,
+body.dark-mode .request {
+  background: var(--color-dark) !important;
+  transition: .3s ease;
 }
 
-/* =================================== FONT SIZE =================================== */
-
-.customize-theme .font-size {
-  margin-top: 5rem;
+body.dark-mode .sidebar .active {
+  background: var(--color-black);
+  color: var(--color-light);
 }
 
-.customize-theme .font-size > div {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--color-light);
-  padding: var(--search-padding);
-  border-radius: var(--card-border-radius);
-  -webkit-border-radius: var(--card-border-radius);
-  -moz-border-radius: var(--card-border-radius);
-  -ms-border-radius: var(--card-border-radius);
-  -o-border-radius: var(--card-border-radius);
+body.dark-mode .search-bar input {
+  color: var(--color-light);
 }
 
-.customize-theme .choose-size {
-  background: var(--color-secondary);
-  width: 100%;
-  height: 0.3rem;
-  margin: 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.customize-theme .choose-size span {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  background: var(--color-secondary);
-  cursor: pointer;
-}
-
-.customize-theme .choose-size span.active {
-  background: var(--color-primary);
-}
-
-/* =================================== COLOR =================================== */
-
-.customize-theme .color {
-  margin-top: 2rem;
-}
-
-.customize-theme .choose-color {
-  background: var(--color-light);
-  padding: var(--search-padding);
-  border-radius: var(--card-border-radius);
-  -webkit-border-radius: var(--card-border-radius);
-  -moz-border-radius: var(--card-border-radius);
-  -ms-border-radius: var(--card-border-radius);
-  -o-border-radius: var(--card-border-radius);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.customize-theme .choose-color span {
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  cursor: pointer;
-}
-
-.customize-theme .choose-color span:nth-child(1) {
-  background: hsl(252, 75%, 60%);
-}
-.customize-theme .choose-color span:nth-child(2) {
-  background: hsl(52, 75%, 60%);
-}
-.customize-theme .choose-color span:nth-child(3) {
-  background: hsl(352, 75%, 60%);
-}
-.customize-theme .choose-color span:nth-child(4) {
-  background: hsl(152, 75%, 60%);
-}
-.customize-theme .choose-color span:nth-child(5) {
-  background: hsl(202, 75%, 60%);
-}
-
-.customize-theme .choose-color span.active {
-  border: 5px solid white;
-}
-
-/* =================================== BACKGROUND =================================== */
-
-.customize-theme .background {
-  margin-top: 2rem;
-}
-
-.customize-theme .choose-bg {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-}
-
-.customize-theme .choose-bg > div {
-  padding: var(--card-padding);
-  width: 100%;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 0.4rem;
-  -webkit-border-radius: 0.4rem;
-  -moz-border-radius: 0.4rem;
-  -ms-border-radius: 0.4rem;
-  -o-border-radius: 0.4rem;
-  cursor: pointer;
-}
-
-.customize-theme .choose-bg > div.active {
+body.dark-mode .story {
   border: 2px solid var(--color-primary);
+  transition: .2s ease;
 }
 
-.customize-theme .choose-bg .bg-1 {
-  background: white;
-  color: black;
-}
-.customize-theme .choose-bg .bg-2 {
-  background: hsl(252, 30%, 17%);
-  color: white;
-}
-.customize-theme .choose-bg .bg-3 {
-  background: hsl(252, 30%, 10%);
-  color: white;
+body.dark-mode .middle .create-post input,
+body.dark-mode .left .sidebar a {
+  color: var(--color-light);
 }
 
-.customize-theme .choose-bg > div span {
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid var(--color-gray);
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  margin-right: 1rem;
+body.dark-mode .messages .categgory .active {
+  border-color: var(--color-black);
+  transition: .3s ease;
+}
+
+/* dark mode button */
+
+.btn-theme {
+  transition: .3s ease;
+  background: transparent;
+}
+
+.btn-theme:hover {
+  transform: rotate(360deg);
+}
+
+.btn-theme i.bx-moon{
+  font-size: 1.6rem;
+  color: #bdbdbd;
+  cursor: pointer;
+  transition: .8s ease;
+}
+
+.btn-theme i.bx-sun {
+  font-size: 1.6rem;
+  color: #ffd000;
+  cursor: pointer;
+  transition: .8s ease;
 }
 
 /* =================================== RESPONSIVE =================================== */

@@ -1,9 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+import Explores from "./components/explores/Explores";
 import Header from "./components/webSide/Header";
-import LeftSide from "./components/webSide/LeftSide";
+import LeftSite from "./components/webSide/LeftSite";
 import Main from "./components/webSide/Main";
-import RightSide from "./components/webSide/RightSide";
+import RightSite from "./components/webSide/RightSite";
 
 const App = () => {
   return (
@@ -12,17 +13,16 @@ const App = () => {
       <main>
         <div className="container">
           <div>
-            <LeftSide />
+            <LeftSite />
           </div>
           <div>
-            <Router>
               <Routes>
                 <Route path="/" element={<Main />} exact />
+                <Route path="/explore" element={<Explores />} />
               </Routes>
-            </Router>
           </div>
           <div>
-            <RightSide />
+            <RightSite />
           </div>
         </div>
       </main>

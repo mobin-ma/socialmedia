@@ -1,39 +1,38 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
-const LeftSide = () => {
+const LeftSite = () => {
     return (
         <div>
             <div className="left">
                 <a className="profile">
                     <div className="profile-picture">
-                        <img src="/images/profile-21.png" alt="" />
+                        <img src="/images/profile-21.jpg" alt="" />
                     </div>
                     <div className="handle">
                         <h4>
-                            ArashZarei
+                            MobinMadadi
                         </h4>
                         <p className="text-muted">
-                            @arashzarei.js
+                            @mobinmadadi.react
                         </p>
                     </div>
                 </a>
 
                 {/* sidebar */}
-
                 <div className="sidebar">
-                    <a className="menu-item active">
-                        <span><i className="uil uil-home"></i></span><h3>Home</h3>
-                    </a>
+                    <Link to='/' className="menu-item">
+                        <span><i className='bx bx-home'></i></span><h3>Home</h3>
+                    </Link>
 
-                    <a className="menu-item">
-                        <span><i className="uil uil-compass"></i></span><h3>Explore</h3>
-                    </a>
+                    <Link to='/explore' className="menu-item">
+                        <span><i className='bx bx-compass'></i></span><h3>Explore</h3>
+                    </Link>
 
                     <a className="menu-item" id="notofications">
-                        <span><i className="uil uil-bell"><small className="notifications-count">9+</small></i></span><h3>Notifications</h3>
+                        <span><i className='bx bx-bell'><small className="notifications-count">9+</small></i></span><h3>Notifications</h3>
 
-                         {/* notification popup */}
-
+                        {/* notification popup */}
                         <div className="notifications-popup">
                             <div>
                                 <div className="profile-picture">
@@ -90,33 +89,27 @@ const LeftSide = () => {
                                 </div>
                             </div>
                         </div>
-
                         {/* end notification popup */}
                     </a>
 
-                    <a className="menu-item" id="massages-notifications">
-                        <span><i className="uil uil-envelope"><small className="notifications-count">6</small></i></span><h3>Messages</h3>
+                    <a className="menu-item" onClick={messages}>
+                        <span><i className='bx bx-envelope' ><small className="notifications-count">6</small></i></span><h3>Messages</h3>
                     </a>
 
                     <a className="menu-item">
-                        <span><i className="uil uil-bookmark"></i></span><h3>Bookmarks</h3>
+                        <span><i className='bx bx-bookmark' ></i></span><h3>Bookmarks</h3>
                     </a>
 
                     <a className="menu-item">
-                        <span><i className="uil uil-chart-line"></i></span><h3>Analytics</h3>
-                    </a>
-
-                    <a className="menu-item" id="theme">
-                        <span><i className="uil uil-palette"></i></span><h3>Theme</h3>
+                        <span><i className='bx bx-line-chart'></i></span><h3>Analytics</h3>
                     </a>
 
                     <a className="menu-item">
-                        <span><i className="uil uil-setting"></i></span><h3>Settings</h3>
+                        <span><i className='bx bx-cog' ></i></span><h3>Settings</h3>
                     </a>
 
                 </div>
-
-                 {/* end sidebar  */}
+                {/* end sidebar  */}
 
                 <label className="btn btn-primary" htmlFor="create-post">Create Post</label>
 
@@ -125,4 +118,4 @@ const LeftSide = () => {
     )
 }
 
-export default LeftSide
+export default LeftSite;

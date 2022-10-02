@@ -1,6 +1,6 @@
 import React from 'react';
 import Feed from './Feed';
-import feed from '.';
+import feed from '.'
 
 const Feeds = () => {
     return (

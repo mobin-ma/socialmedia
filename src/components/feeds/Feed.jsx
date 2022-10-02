@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Feed = ({ avatar, name, date, img }) => {
+
+    const [likePost, setLikePost] = useState(false);
+    const [bookMarkPost, setBookMarkPost] = useState(false);
+
     return (
         <div className="feed">
-
             <div className="head">
                 <div className="user">
                     <div className="profile-picture">
@@ -23,13 +26,13 @@ const Feed = ({ avatar, name, date, img }) => {
 
             <div className="action-button">
                 <div className="interaction-buttons">
-                    <span><i className="uil uil-heart"></i></span>
-                    <span><i className="uil uil-comment-dots"></i></span>
-                    <span><i className="uil uil-share-alt"></i></span>
+                    <span onClick={() => !likePost ? setLikePost(true) : setLikePost(false)}><i className={ likePost ? 'bx bxs-heart' : 'bx bx-heart'}></i></span>
+                    <span><i className='bx bx-message-rounded-dots'></i></span>
+                    <span><i className="bx bx-share-alt"></i></span>
                 </div>
 
                 <div className="bookmark">
-                    <span><i className="uil uil-bookmark-full"></i></span>
+                <span onClick={() => !bookMarkPost ? setBookMarkPost(true) : setBookMarkPost(false)}><i className={ bookMarkPost ? 'bx bxs-bookmark' : 'bx bx-bookmark'}></i></span>
                 </div>
             </div>
 

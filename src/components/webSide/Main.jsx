@@ -11,14 +11,6 @@ const Main = () => {
         <Stoties />
         {/* end story  */}
 
-        <form className="create-post">
-          <div className="profile-picture">
-            <img src="/images/profile-21.png" alt="" />
-          </div>
-          <input type="text" placeholder="What is on your mind , Arash?" id="create-post" />
-          <input type="submit" value="Post" className="btn btn-primary" />
-        </form>
-
         {/* feeds */}
         <Feeds />
         {/* end feeds */}

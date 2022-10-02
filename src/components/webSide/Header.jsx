@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+// import { connect } from 'react-redux';
+import DarkMode from '../darkMode/DarkMode';
+// import { changeMode } from '../redux/actions/themeAction';
 
 const Header = () => {
     return (
@@ -16,9 +19,10 @@ const Header = () => {
                     </div>
 
                     <div className="create">
+                        <DarkMode />
                         <label className="btn btn-primary" htmlFor="create-post">Create</label>
                         <div className="profile-picture">
-                            <img src="images/profile-21.png" alt="" />
+                            <img src="images/profile-21.jpg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -27,4 +31,10 @@ const Header = () => {
     )
 }
 
-export default Header
+// const mapDispatchToProps = (dispatch) => {  
+//     return {      
+//        darkMode: (mode) => dispatch(changeMode(mode))  
+//     };
+//  } 
+
+export default Header;
