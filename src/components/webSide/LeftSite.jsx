@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const LeftSite = () => {
+
     return (
         <div>
             <div className="left">
@@ -92,7 +93,7 @@ const LeftSite = () => {
                         {/* end notification popup */}
                     </a>
 
-                    <a className="menu-item" onClick={messages}>
+                    <a className="menu-item">
                         <span><i className='bx bx-envelope' ><small className="notifications-count">6</small></i></span><h3>Messages</h3>
                     </a>
 
