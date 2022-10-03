@@ -856,6 +856,10 @@ body.dark-mode .messages .categgory .active {
   .middle .create-post {
     display: none;
   }
+
+  .postHover {
+    width: 89%;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -866,6 +870,11 @@ body.dark-mode .messages .categgory .active {
 
   .explores {
     grid-template-columns: 150px 150px;
+    gap: 1rem;
+  }
+
+  .postHover {
+    width: 100%;
   }
 }
 
